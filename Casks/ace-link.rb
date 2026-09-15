@@ -12,13 +12,6 @@ cask "ace-link" do
 
   app "Ace Link.app"
 
-  # Strip macOS quarantine so the unsigned app launches without Gatekeeper prompts.
-  postflight do
-    system_command "/usr/bin/xattr",
-                   args: ["-cr", "#{staged_path}/Ace Link.app"],
-                   sudo: false
-  end
-
   uninstall quit: "blaise.io.acelink"
 
   zap trash: "~/Library/Application Support/Ace Link"
