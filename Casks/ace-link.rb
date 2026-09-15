@@ -7,7 +7,7 @@ cask "ace-link" do
   desc "Menu bar app for playing Ace Stream video streams in an external media player"
   homepage "https://github.com/TommyLuco/acelink"
 
-  depends_on cask: "docker"
+  depends_on cask: "docker-desktop"
   depends_on :macos
 
   app "Ace Link.app"
