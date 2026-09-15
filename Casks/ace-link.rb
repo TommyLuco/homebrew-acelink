@@ -13,7 +13,7 @@ cask "ace-link" do
   app "Ace Link.app"
 
   # Strip quarantine so the intentionally-unsigned app launches without Gatekeeper prompts.
-  postflight do
+  postflight_steps do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "#{appdir}/Ace Link.app"],
                    sudo: false
