@@ -13,7 +13,8 @@ cask "ace-link" do
   app "Ace Link.app"
 
   # Strip quarantine xattr so the intentionally-unsigned app launches without Gatekeeper prompts.
-  postflight_steps do
+  # postflight is deprecated upstream but postflight_steps lacks system_command — fine for a private tap.
+  postflight do
     system_command "/usr/bin/xattr",
                    args: ["-cr", "/Applications/Ace Link.app"],
                    sudo: false
